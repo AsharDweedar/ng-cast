@@ -2,20 +2,17 @@ angular.module('video-player')
 
 .component('videoPlayer', {
 	bindings: {
-		video : '<'
+    video : '<'
 	},
-	controller : function () {
-		//this.url = "https://www.youtube.com/embed/ "+ this.video.id.videoId ;
-		//console.log(this.video)
+	controller : function ($scope) { 
+    /*if ($scope.$parent.$ctrl.currentVideo !== undefined){
+      
+      this.templateUrl = 'src/templates/videoPlayer.html'
+      console.log(this.templateUrl)
+    } else {
+      this.templateUrl = 'src/templates/videoPlayer copy.html';
+    }*/
+    //console.log($scope.$parent.$ctrl.currentVideo)      
 	},
-  template : `<div class="video-player">
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/"{{$ctrl.video.id.videoId}} allowFullScreen></iframe>
-  </div>
-  <div class="video-player-details">
-    <h3>{{$ctrl.video.snippet.title}} </h3>
-    <div>{{$ctrl.video.snippet.description}}</div>
-  </div>
-</div>
-`
+  templateUrl : 'src/templates/videoPlayer.html'
 });

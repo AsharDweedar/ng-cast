@@ -3,11 +3,16 @@ angular.module('video-player')
 .component('app', {
 	controller : function () {
     this.videos = window.exampleVideoData;
-		this.searchResults ;
     this.currentVideo = this.videos[0];
-    this.changer = function (ind) {
-      this.currentVideo = this.videos[ind]
-    }
+
+    this.selectVideo = function ($index) {
+      console.log($index,'inside on selectVideo app.js')
+      this.currentVideo = this.videos[$index];
+    };
+    this.searchResults = function () {
+    };
+
 	},
-	templateUrl : 'src/templates/app.html'
+  templateUrl : 'src/templates/app.html'
+	
 });
